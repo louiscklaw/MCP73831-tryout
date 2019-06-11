@@ -1,4 +1,4 @@
-19542737129385068
+19553665063927068
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -44016,6 +44016,20 @@ EMI Filter
 19
 4
 footprint-lib
+24Cxx_SOIC8
+SOIC, 8 Pin (http://www.ti.com/lit/ds/symlink/lm5017.pdf#page=31), generated with kicad-footprint-generator ipc_gullwing_generator.py
+24Cxx_SOIC8 24c02
+0
+14
+8
+footprint-lib
+74HCT4050_SOP16
+16-Lead Plastic Small Outline http://www.vishay.com/docs/49633/sg2098.pdf
+74HCT4050_SOP16
+0
+16
+16
+footprint-lib
 9013,J3,SOT23
 SOT23
 
@@ -44057,6 +44071,13 @@ CMS SOT
 0
 8
 3
+footprint-lib
+AN9520
+SMD antenna, 9.5x2.0mm, 2p
+
+0
+2
+2
 footprint-lib
 AQ_mpt_0,5%2f4-2,54
 4-way 2.54mm pitch terminal block, Phoenix MPT series
@@ -44240,12 +44261,33 @@ Wi-Fi Module
 22
 22
 footprint-lib
+ESP-12F
+Wi-Fi Module, http://wiki.ai-thinker.com/_media/esp8266/docs/aithinker_esp_12f_datasheet_en.pdf
+Wi-Fi Module
+0
+22
+22
+footprint-lib
 ESP-WROOM-32_MODULE
 
 
 0
 53
 39
+footprint-lib
+ESP8266EX
+QFN, 32 Pin (https://www.exar.com/ds/mxl7704.pdf (Page 35)), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
+ESP8266EX
+0
+59
+33
+footprint-lib
+ESP8266EX_SERVICE
+ESP8266EX_SERVICE
+ESP8266EX_SERVICE
+0
+4
+4
 footprint-lib
 FBGA96
 FBGA96-UNIVERSAL PACKAGE
@@ -45520,6 +45562,13 @@ SDCARD HEADER 10
 0
 10
 10
+footprint-lib
+SHT3x-DIS
+
+
+0
+9
+9
 footprint-lib
 SHT20
 SHT20

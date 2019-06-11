@@ -1,35 +1,54 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Device_Fuse_Small
+# my_power_Vbat
 #
-DEF Device_Fuse_Small F 0 10 N N 1 F N
-F0 "F" 0 -60 50 H V C CNN
-F1 "Device_Fuse_Small" 0 60 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- SM*
-$ENDFPLIST
-DRAW
-S -50 20 50 -20 0 1 0 N
-P 2 0 1 0 -50 0 50 0 N
-X ~ 1 -100 0 50 R 50 50 1 1 P
-X ~ 2 100 0 50 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# my_power_Vout
-#
-DEF my_power_Vout #PWR 0 0 Y Y 1 F P
+DEF my_power_Vbat #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "my_power_Vout" 0 100 50 H V C CNN
+F1 "my_power_Vbat" 0 100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
 P 2 0 1 0 -50 50 50 50 N
 P 2 0 1 0 0 0 0 50 N
-X Vout 1 0 0 0 U 50 50 1 1 W N
+X Vbat 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# my_solder_jumper_SolderJumper_2_Open_round
+#
+DEF my_solder_jumper_SolderJumper_2_Open_round JP 0 0 Y N 1 F N
+F0 "JP" 0 80 50 H V C CNN
+F1 "my_solder_jumper_SolderJumper_2_Open_round" 0 -100 50 H V C CNN
+F2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ SolderJumper*Open*
+$ENDFPLIST
+DRAW
+A -10 0 40 901 -901 0 1 0 N -10 40 -10 -40
+A -10 0 40 901 -901 0 1 0 F -10 40 -10 -40
+A 10 0 40 -899 899 0 1 0 N 10 -40 10 40
+A 10 0 40 -899 899 0 1 0 F 10 -40 10 40
+P 2 0 1 0 -10 40 -10 -40 N
+P 2 0 1 0 10 40 10 -40 N
+X A 1 -150 0 100 R 50 50 1 1 P
+X B 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# power_+5V
+#
+DEF power_+5V #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "power_+5V" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +5V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
@@ -46,15 +65,15 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# taobao-c_C104,0805
+# taobao-c_C106,0603
 #
-DEF taobao-c_C104,0805 C 0 10 N N 1 F N
+DEF taobao-c_C106,0603 C 0 10 N N 1 F N
 F0 "C" 10 70 50 H V L CNN
-F1 "taobao-c_C104,0805" 10 -80 50 H V L CNN
-F2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" 0 0 50 H I C CNN
+F1 "taobao-c_C106,0603" 10 -80 50 H V L CNN
+F2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
- C_0805*
+ C_0603*
 $ENDFPLIST
 DRAW
 P 2 0 1 13 -60 -20 60 -20 N
@@ -64,81 +83,20 @@ X ~ 2 0 -100 80 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# taobao-components_LM2940CT-5
+# taobao-components_MCP73831
 #
-DEF taobao-components_LM2940CT-5 U 0 40 Y Y 1 F N
-F0 "U" 0 -475 50 H V C CNN
-F1 "taobao-components_LM2940CT-5" 0 -550 50 H V C CNN
-F2 "footprint-lib:LM2940CT-5" 0 -625 50 H I C CNN
+DEF taobao-components_MCP73831 U 0 40 Y Y 1 F N
+F0 "U" 0 -300 50 H V C CNN
+F1 "taobao-components_MCP73831" 0 -400 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
-S -250 300 250 0 0 1 0 f
-X IN 1 -450 200 200 R 50 50 1 1 W
-X GND 2 0 -200 200 U 50 50 1 1 W
-X OUT 3 450 200 200 L 50 50 1 1 W
-ENDDRAW
-ENDDEF
-#
-# taobao-components_MCP73837_MSOP10
-#
-DEF taobao-components_MCP73837_MSOP10 U 0 40 Y Y 1 F N
-F0 "U" 0 -1250 50 H V C CNN
-F1 "taobao-components_MCP73837_MSOP10" 0 -1350 50 H V C CNN
-F2 "footprint-lib:MCP73837_MSOP10" 25 -1450 50 H I C CNN
-F3 "" -1175 200 50 H I C CNN
-DRAW
-S -600 800 600 -700 0 1 0 f
-X Vac 1 -800 600 200 R 50 50 1 1 W
-X Vbat 10 800 500 200 L 50 50 1 1 w
-X Vusb 2 -800 375 200 R 50 50 1 1 W
-X Charging 3 -800 100 200 R 50 50 1 1 I
-X Charged 4 -800 -150 200 R 50 50 1 1 I
-X Vss 5 -200 -900 200 U 50 50 1 1 W
-X Vac_prog 6 800 -200 200 L 50 50 1 1 I
-X USB_prog 7 250 -900 200 U 50 50 1 1 I
-X Power_Good 8 -800 -450 200 R 50 50 1 1 I
-X Therm 9 800 150 200 L 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# taobao-components_USB_Micro
-#
-DEF taobao-components_USB_Micro U 0 40 Y Y 1 F N
-F0 "U" 0 -400 50 H V C CNN
-F1 "taobao-components_USB_Micro" 0 -500 50 H V C CNN
-F2 "footprint-lib:USB_Micro-B_Molex-105017-0001" 0 -500 50 H I C CNN
-F3 "" 0 -500 50 H I C CNN
-DRAW
-S -200 300 200 -300 0 1 0 f
-X VCC 1 -400 200 200 R 50 50 1 1 W
-X D- 2 -400 100 200 R 50 50 1 1 I
-X D+ 3 -400 0 200 R 50 50 1 1 I
-X ID 4 -400 -100 200 R 50 50 1 1 I
-X GND 5 -400 -200 200 R 50 50 1 1 W
-X MH1 6 400 -200 200 L 50 50 1 1 W
-X MH2 7 400 -100 200 L 50 50 1 1 W
-X MH3 8 400 100 200 L 50 50 1 1 W
-X MH4 9 400 200 200 L 50 50 1 1 W
-ENDDRAW
-ENDDEF
-#
-# taobao-cp_CP47uf,16V
-#
-DEF taobao-cp_CP47uf,16V C 0 10 N N 1 F N
-F0 "C" 10 70 50 H V L CNN
-F1 "taobao-cp_CP47uf,16V" 10 -80 50 H V L CNN
-F2 "Capacitor_SMD:CP_Elec_5x5.3" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- CP_Elec**5x5.3*
-$ENDFPLIST
-DRAW
-S -60 -12 60 -27 0 1 0 F
-S -60 27 60 12 0 1 0 N
-P 2 0 1 0 -50 60 -30 60 N
-P 2 0 1 0 -40 50 -40 70 N
-X ~ 1 0 100 73 D 50 50 1 1 P
-X ~ 2 0 -100 73 U 50 50 1 1 P
+S -200 250 250 -250 0 1 0 f
+X STAT 1 -400 -100 200 R 50 50 1 1 I
+X VSS 2 450 -150 200 L 50 50 1 1 I
+X VBAT 3 450 150 200 L 50 50 1 1 I
+X VDD 4 -400 100 200 R 50 50 1 1 I
+X PROG 5 450 0 200 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
@@ -157,27 +115,6 @@ DRAW
 P 2 0 1 0 -30 -40 -30 40 N
 P 2 0 1 0 -30 0 30 0 N
 P 4 0 1 0 30 -40 -30 0 30 40 30 -40 N
-X K 1 -100 0 70 R 50 50 1 1 P
-X A 2 100 0 70 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# taobao-led_LED_GREEN,0603
-#
-DEF taobao-led_LED_GREEN,0603 D 0 10 N N 1 F N
-F0 "D" -50 125 50 H V L CNN
-F1 "taobao-led_LED_GREEN,0603" -175 -100 50 H V L CNN
-F2 "footprint-lib:LED_0603_1608Metric" 0 0 50 V I C CNN
-F3 "" 0 0 50 V I C CNN
-$FPLIST
- *0603*
-$ENDFPLIST
-DRAW
-P 2 0 1 0 -30 -40 -30 40 N
-P 2 0 1 0 40 0 -30 0 N
-P 4 0 1 0 30 -40 -30 0 30 40 30 -40 N
-P 5 0 1 0 0 30 -20 50 -10 50 -20 50 -20 40 N
-P 5 0 1 0 20 50 0 70 10 70 0 70 0 60 N
 X K 1 -100 0 70 R 50 50 1 1 P
 X A 2 100 0 70 L 50 50 1 1 P
 ENDDRAW
@@ -204,32 +141,11 @@ X A 2 100 0 70 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# taobao-led_LED_RED,0603
+# taobao-r_R102,0603
 #
-DEF taobao-led_LED_RED,0603 D 0 10 N N 1 F N
-F0 "D" -50 125 50 H V L CNN
-F1 "taobao-led_LED_RED,0603" -175 -100 50 H V L CNN
-F2 "footprint-lib:LED_0603_1608Metric" 0 0 50 V I C CNN
-F3 "" 0 0 50 V I C CNN
-$FPLIST
- *0603*
-$ENDFPLIST
-DRAW
-P 2 0 1 0 -30 -40 -30 40 N
-P 2 0 1 0 40 0 -30 0 N
-P 4 0 1 0 30 -40 -30 0 30 40 30 -40 N
-P 5 0 1 0 0 30 -20 50 -10 50 -20 50 -20 40 N
-P 5 0 1 0 20 50 0 70 10 70 0 70 0 60 N
-X K 1 -100 0 70 R 50 50 1 1 P
-X A 2 100 0 70 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# taobao-r_R103,0603
-#
-DEF taobao-r_R103,0603 R 0 10 N N 1 F N
+DEF taobao-r_R102,0603 R 0 10 N N 1 F N
 F0 "R" 30 20 50 H V L CNN
-F1 "taobao-r_R103,0603" 30 -40 50 H V L CNN
+F1 "taobao-r_R102,0603" 30 -40 50 H V L CNN
 F2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -242,11 +158,11 @@ X ~ 2 0 -100 30 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# taobao-r_R122,0603
+# taobao-r_R103,0603
 #
-DEF taobao-r_R122,0603 R 0 10 N N 1 F N
+DEF taobao-r_R103,0603 R 0 10 N N 1 F N
 F0 "R" 30 20 50 H V L CNN
-F1 "taobao-r_R122,0603" 30 -40 50 H V L CNN
+F1 "taobao-r_R103,0603" 30 -40 50 H V L CNN
 F2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST

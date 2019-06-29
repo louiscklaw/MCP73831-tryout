@@ -21,8 +21,8 @@
       )
     )
     (boundary
-      (path pcb 0  41322.5 -31959.4  17232.5 -31959.4  17232.5 -16816.4
-            41322.5 -16816.4  41322.5 -31959.4)
+      (path pcb 0  42246.4 -31959.4  16554.6 -31959.4  16554.6 -16816.4
+            42246.4 -16816.4  42246.4 -31959.4)
     )
     (via "Via[0-1]_800:400_um")
     (rule
@@ -33,6 +33,12 @@
     )
   )
   (placement
+    (component Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+      (place C1 37000 -26200 front 0 (PN C106,0603))
+      (place R2 23368 -27813 front 270 (PN R103,0603))
+      (place R1 20701 -28702 front 180 (PN R102,0603))
+      (place C2 38100 -23114 front 0 (PN C106,0603))
+    )
     (component Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
       (place J3 38100 -20320 front 270 (PN BAT))
       (place J2 30480 -20320 front 270 (PN 5V_OUT))
@@ -41,23 +47,32 @@
     (component "footprint-lib:MCP73831_SOT23_5"
       (place U1 27305 -27432 front 180 (PN MCP73831))
     )
-    (component Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder
-      (place R2 23368 -27813 front 270 (PN R103,0603))
-      (place R1 31115 -28448 front 0 (PN R102,0603))
-      (place C1 29845 -24003 front 0 (PN C106,0603))
-    )
     (component "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-      (place JP2 35560 -24384 front 90 (PN OUT_EN))
+      (place JP2 30861 -26924 front 90 (PN OUT_EN))
       (place JP1 20320 -24511 front 270 (PN 5V_EN))
     )
     (component "footprint-lib:LED_0603_1608Metric"
-      (place D2 31115 -26670 front 0 (PN CHARGING))
+      (place D2 20574 -27051 front 0 (PN CHARGING))
     )
     (component "Diode_SMD:D_SOD-123"
-      (place D1 25527 -24003 front 0 (PN D_1N4148_T4))
+      (place D1 32639 -23495 front 0 (PN D_1N4148_T4))
     )
   )
   (library
+    (image Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+      (outline (path signal 50  1650 -730  -1650 -730))
+      (outline (path signal 50  1650 730  1650 -730))
+      (outline (path signal 50  -1650 730  1650 730))
+      (outline (path signal 50  -1650 -730  -1650 730))
+      (outline (path signal 120  -171.267 -510  171.267 -510))
+      (outline (path signal 120  -171.267 510  171.267 510))
+      (outline (path signal 100  800 -400  -800 -400))
+      (outline (path signal 100  800 400  800 -400))
+      (outline (path signal 100  -800 400  800 400))
+      (outline (path signal 100  -800 -400  -800 400))
+      (pin RoundRect[T]Pad_1050x950_238.404_um 2 875 0)
+      (pin RoundRect[T]Pad_1050x950_238.404_um 1 -875 0)
+    )
     (image Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
       (outline (path signal 50  1800 1800  -1800 1800))
       (outline (path signal 50  1800 -4350  1800 1800))
@@ -94,20 +109,6 @@
       (pin Rect[T]Pad_1060x650_um 3 -1100 -950)
       (pin Rect[T]Pad_1060x650_um 4 1100 -950)
       (pin Rect[T]Pad_1060x650_um 5 1100 950)
-    )
-    (image Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder
-      (outline (path signal 50  1650 -730  -1650 -730))
-      (outline (path signal 50  1650 730  1650 -730))
-      (outline (path signal 50  -1650 730  1650 730))
-      (outline (path signal 50  -1650 -730  -1650 730))
-      (outline (path signal 120  -171.267 -510  171.267 -510))
-      (outline (path signal 120  -171.267 510  171.267 510))
-      (outline (path signal 100  800 -400  -800 -400))
-      (outline (path signal 100  800 400  800 -400))
-      (outline (path signal 100  -800 400  800 400))
-      (outline (path signal 100  -800 -400  -800 400))
-      (pin RoundRect[T]Pad_1050x950_238.404_um 2 875 0)
-      (pin RoundRect[T]Pad_1050x950_238.404_um 1 -875 0)
     )
     (image "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
       (outline (path signal 50  1650 -1250  -1650 -1250))
@@ -236,13 +237,13 @@
   )
   (network
     (net GND
-      (pins J3-1 J2-1 J1-1 U1-2 R2-1 C1-2)
+      (pins C1-2 J3-1 J2-1 J1-1 U1-2 R2-1 C2-2)
     )
     (net Vbat
-      (pins J3-2 JP2-2 D1-2 C1-1)
+      (pins C1-1 J3-2 JP2-2 D1-2)
     )
     (net +5V
-      (pins J2-2 D1-1)
+      (pins J2-2 D1-1 C2-1)
     )
     (net "Net-(D2-Pad1)"
       (pins R1-2 D2-1)
@@ -259,11 +260,11 @@
     (net "Net-(R2-Pad2)"
       (pins U1-5 R2-2)
     )
-    (net VCC
+    (net VBUS
       (pins J1-2 JP1-1)
     )
     (class kicad_default "" +5V GND "Net-(D2-Pad1)" "Net-(D2-Pad2)" "Net-(JP2-Pad1)"
-      "Net-(R1-Pad1)" "Net-(R2-Pad2)" VCC Vbat
+      "Net-(R1-Pad1)" "Net-(R2-Pad2)" VBUS Vbat
       (circuit
         (use_via Via[0-1]_800:400_um)
       )
@@ -274,5 +275,48 @@
     )
   )
   (wiring
+    (wire (path F.Cu 250  22860 -20320  24035.3 -20320  25220.4 -19134.9  28439.3 -19134.9
+            29304.7 -20000.3  29304.7 -20320)(net GND)(type protect))
+    (wire (path F.Cu 250  27549.7 -25374.1  27549.7 -27132.4)(net GND)(type protect))
+    (wire (path F.Cu 250  30480 -20320  29304.7 -20320)(net GND)(type protect))
+    (wire (path F.Cu 250  27549.7 -27132.4  27549.7 -27432)(net GND)(type protect))
+    (wire (path F.Cu 250  23368 -26938  23562.4 -27132.4  27549.7 -27132.4)(net GND)(type protect))
+    (wire (path F.Cu 250  28405 -27432  27549.7 -27432)(net GND)(type protect))
+    (wire (path F.Cu 250  38100 -20320  36924.7 -20320)(net GND)(type protect))
+    (wire (path F.Cu 250  30480 -20320  31655.3 -20320  32830.6 -19144.7  36116.8 -19144.7
+            36924.7 -19952.6  36924.7 -20320)(net GND)(type protect))
+    (wire (path F.Cu 250  38100 -22239  38862 -23001)(net GND)(type protect))
+    (wire (path F.Cu 250  38100 -20320  38100 -22239)(net GND)(type protect))
+    (wire (path F.Cu 250  38862 -23001  38975 -23114)(net GND)(type protect))
+    (wire (path F.Cu 250  22860 -20320  22860 -23495  23622 -24257  26797 -24257)(net GND)(type protect))
+    (wire (path F.Cu 250  27549.7 -25009.7  27549.7 -25374.1)(net GND)(type protect))
+    (wire (path F.Cu 250  26797 -24257  27549.7 -25009.7)(net GND)(type protect))
+    (wire (path F.Cu 250  37225 -23114  35687 -23114)(net Vbat)(type protect))
+    (wire (path F.Cu 250  35560 -22987  35560 -20320)(net Vbat)(type protect))
+    (wire (path F.Cu 250  35687 -23114  35560 -22987)(net Vbat)(type protect))
+    (wire (path F.Cu 250  34670 -23114  34289 -23495)(net Vbat)(type protect))
+    (wire (path F.Cu 250  37225 -23114  34670 -23114)(net Vbat)(type protect))
+    (wire (path F.Cu 250  32360 -26274  31311 -26274)(net Vbat)(type protect))
+    (wire (path F.Cu 250  34289 -23495  34289 -24345  32360 -26274)(net Vbat)(type protect))
+    (wire (path F.Cu 250  30989 -23495  28448 -23495)(net +5V)(type protect))
+    (wire (path F.Cu 250  27940 -22987  27940 -20320)(net +5V)(type protect))
+    (wire (path F.Cu 250  28448 -23495  27940 -22987)(net +5V)(type protect))
+    (wire (path F.Cu 250  19786.5 -28662.5  19826 -28702)(net "Net-(D2-Pad1)")(type protect))
+    (wire (path F.Cu 250  19786.5 -27051  19786.5 -28662.5)(net "Net-(D2-Pad1)")(type protect))
+    (wire (path F.Cu 250  20320 -25161  21642.5 -25161  22550.7 -26069.2  24936.9 -26069.2
+            25349.7 -26482)(net "Net-(D2-Pad2)")(type protect))
+    (wire (path F.Cu 250  26205 -26482  25349.7 -26482)(net "Net-(D2-Pad2)")(type protect))
+    (wire (path F.Cu 250  21361.5 -26202.5  20320 -25161)(net "Net-(D2-Pad2)")(type protect))
+    (wire (path F.Cu 250  21361.5 -27051  21361.5 -26202.5)(net "Net-(D2-Pad2)")(type protect))
+    (wire (path F.Cu 250  30451.4 -27574  30861 -27574)(net "Net-(JP2-Pad1)")(type protect))
+    (wire (path F.Cu 250  29359.4 -26482  30451.4 -27574)(net "Net-(JP2-Pad1)")(type protect))
+    (wire (path F.Cu 250  28405 -26482  29359.4 -26482)(net "Net-(JP2-Pad1)")(type protect))
+    (wire (path F.Cu 250  27625 -28382  28405 -28382)(net "Net-(R1-Pad1)")(type protect))
+    (wire (path F.Cu 250  26469 -29538  27625 -28382)(net "Net-(R1-Pad1)")(type protect))
+    (wire (path F.Cu 250  22412 -29538  26469 -29538)(net "Net-(R1-Pad1)")(type protect))
+    (wire (path F.Cu 250  21576 -28702  22412 -29538)(net "Net-(R1-Pad1)")(type protect))
+    (wire (path F.Cu 250  26205 -28382  25349.7 -28382)(net "Net-(R2-Pad2)")(type protect))
+    (wire (path F.Cu 250  23368 -28688  25043.7 -28688  25349.7 -28382)(net "Net-(R2-Pad2)")(type protect))
+    (wire (path F.Cu 250  20320 -23861  20320 -20320)(net VBUS)(type protect))
   )
 )

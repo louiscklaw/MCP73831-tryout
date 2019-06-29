@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 103)
+    (start_pass_no 112)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
@@ -64,7 +64,7 @@
   )
   (class "kicad_default"
     GND Vbat +5V "Net-(D2-Pad1)" "Net-(D2-Pad2)" "Net-(JP2-Pad1)" "Net-(R1-Pad1)" "Net-(R2-Pad2)"
-    VCC
+    VBUS
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
